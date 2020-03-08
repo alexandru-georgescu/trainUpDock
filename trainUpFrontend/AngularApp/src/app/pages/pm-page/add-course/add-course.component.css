@@ -1,3 +1,6 @@
+* {
+    font-family: 'Aleo', serif;
+}
 .inputs__container {
     display: flex;
     justify-content: space-around;
@@ -5,17 +8,36 @@
     margin-top: 50px;
 }
 
-.space-needed1 {
+.input {
+    width: 300px;
+    height: 35px;
+    border: 1px solid #9b9b9b;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 0 5px;
+    margin-bottom: 25px;
+    margin: 0 auto;
+}
+
+.input1 {
+    width: 300px;
+    height: 35px;
+    border: 1px solid #9b9b9b;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 0 5px;
+    margin-bottom: 25px;
     margin-left: 100px;
 }
 
-.space-needed2 {
-    margin-left: 125px;
+.input--big {
+    width: 100%;
 }
 
 .modal__buttons {
     display: flex;
     margin-top: 25px;
+    justify-content: space-around;
 }
 
 .title {
@@ -23,27 +45,10 @@
 }
 
 .cancel-btn {
-    background-color:#dc3545;
-    margin-left: 50px;
-    color: white;
+    background-color:#ff6347;
+    font-family: 'Aleo', serif;
 }
 .add-btn {
-    background-color: #28a745;
-    margin-left: 250px;
-    color: white;
+    background-color: #98fb98;
+    font-family: 'Aleo', serif;
 }
-
-::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
-    color: black !important;
-  }
-  ::ng-deep .mat-form-field.mat-focused .mat-form-field-ripple {
-    background-color: #6699d3 !important;
-  }
-
-  ::ng-deep .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) .mat-select-arrow {
-      color: #6699d3 !important;
-  }
-
-  ::ng-deep .mat-form-field.mat-focused .mat-input-element {
-    color: black !important;
-  }

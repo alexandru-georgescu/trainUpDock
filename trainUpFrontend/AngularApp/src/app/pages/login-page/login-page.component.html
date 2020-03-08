@@ -1,34 +1,27 @@
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-
-
 <div class="row screen-full-height">
     <div class="col-md-6 login-logo-container container-center">
-        <div>
-            <img class="fx-grayscale-logo" alt="trainUP-logo" src="../../../assets/img/156638812088557421.png">
-        </div>
+        <img class="fx-grayscale-logo" alt="trainUP-logo" src="../../../assets/img/156638812088557421.png">
     </div>
-
-
     <div class="col-md-6">
         <div class="container-center screen-full-height">
             <div class="content">
                 <div class="title title-border">
-                    <h2>Log in to your account</h2>
+                    <h4>Log in to your account</h4>
                 </div>
-                <form id="login" [formGroup]="loginForm">
+                <form id="login" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                     <div class="form-group flex">
                         <!-- <label> Email </label> -->
                         <i class="fa fa-user icon" aria-hidden="true"></i>
                         <div class="col">
-                            <mat-form-field>
-                                <input matInput type="text" placeholder="E-mail" formControlName="email"
-                                    autocomplete="email" id="email" />
-                                <mat-error *ngIf="controls.email.errors?.required"> E-mail
-                                    is required! </mat-error>
-                            </mat-form-field>
+                            <input type="text" placeholder="E-mail" formControlName="email" autocomplete="email"
+                                id="email" />
+                            <span *ngIf="submitted && controls.email.errors?.required" class="invalid-feedback"> Email
+                                is required! </span>
                         </div>
                     </div>
 
@@ -36,32 +29,23 @@
                         <!-- <label> Password </label> -->
                         <i class="fa fa-lock icon" aria-hidden="true"></i>
                         <div class="col">
-                            <mat-form-field [color]='accent'>
-                                <input matInput type="password" placeholder="Password" formControlName="password"
-                                    autocomplete="current-password" id="password" />
-                                <mat-error *ngIf="controls.password.errors?.required">
-                                    Password is required! </mat-error>
-                            </mat-form-field>
+                            <input type="password" placeholder="Password" formControlName="password"
+                                autocomplete="current-password" id="password" />
+                            <span *ngIf="submitted && controls.password.errors?.required" class="invalid-feedback">
+                                Password is required! </span>
                         </div>
                     </div>
 
                     <div class="login-button">
-                        <button mat-stroked-button appPreventDoubleClick (throttledClick)="beforeLogIn()"
-                            [throttleTime]="1000">Login</button>
+                        <button type="submit" class="button"><span>Login</span></button>
                     </div>
                     <div class="wrong-input">
-                        <span *ngIf="needToSetTeamLeader">You do not have a Team Leader assigned! </span>
-                        <span *ngIf="needToactivateAccount">You need to activate your account! </span>
-                        <span *ngIf="wrongInput">Wrong email or password. Try again! </span>
-                        <span *ngIf="alreadyLoggedIn">You are already logged in! </span>
+                        <span *ngIf="wrongInput">Wrong email or password. Try again!</span>
+                        <span *ngIf="alreadyLoggedIn">You are already logged in!</span>
                     </div>
                     <div class="text-container">
                         <span>You don't have an account?&nbsp;</span>
                         <a [routerLink]="['/register']" class="btn btn-link">Register here</a>
-                    </div>
-                    <div class="text-container">
-                        <span>Forgot your password?&nbsp;</span>
-                        <a [routerLink]="['/forgot-password']" class="btn btn-link">Reset it here</a>
                     </div>
                 </form>
             </div>

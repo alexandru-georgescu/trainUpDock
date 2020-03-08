@@ -1,40 +1,48 @@
 <head>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 </head>
 
-<div class="upperContainer">
-  <div class="logoContainer">
-    trainUP
-  </div>
-  <!-- LogOut Button -->
-  <div class='userDetailsContainer'>
-    <div>
-      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="account">
-        <i class="material-icons">account_circle</i>
-        <span> {{user.firstName}} {{ user.lastName }}</span>
-      </button>
-      <mat-menu #menu="matMenu" [overlapTrigger]="false" xPosition="before" yPosition="below">
+
+<div class='userDetailsContainer'>
+  <div>
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="account">
+      <mat-icon>account_circle</mat-icon>
+      <span>Logged in as: {{user.firstName}} {{ user.lastName }}</span>
+    </button>
+    <mat-menu #menu="matMenu">
+      <form (ngSubmit)="onSubmit()">
         <div>
-          <button id="ac" mat-menu-item appPreventDoubleClick (throttledClick)="onStatistic()" [throttleTime]="1000">Statistics</button>
+          <button mat-menu-item type="submit">
+            <span>Log out</span>
+          </button>
         </div>
-        <div>
-          <button id="ac" mat-menu-item appPreventDoubleClick (throttledClick)="logout()" [throttleTime]="1000">Log out</button>
-        </div>
-      </mat-menu>
-    </div>
+      </form>
+    </mat-menu>
   </div>
 </div>
 
-<mat-tab-group mat-align-tabs="center" [selectedIndex]="1">
-  <mat-tab label="Attended courses">
-    <app-previous-courses></app-previous-courses>
 
-  </mat-tab>
-  <mat-tab label="Ongoing courses">
-    <app-current-courses></app-current-courses>
-
-  </mat-tab>
-  <mat-tab label="Available courses">
-    <app-next-courses></app-next-courses>
-  </mat-tab>
-</mat-tab-group>
+<div class="container">
+  <div class="row">
+    <div class="col s10 offset-s1">
+      <div class="card grey lighten-2">
+        <ul class="tabs tabs-fixed-width tabs-transparent">
+          <li class="tab">
+            <a routerLink='prev' skipLocationChange routerLinkActive='active'>Previous Courses</a>
+          </li>
+          <li class="tab">
+            <a routerLink='curr' skipLocationChange routerLinkActive='active'>Current Courses</a>
+          </li>
+          <li class="tab">
+            <a routerLink='next' skipLocationChange routerLinkActive='active'>Future Courses</a>
+          </li>
+        </ul>
+        <div class="card-content white">
+          <div class="row">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

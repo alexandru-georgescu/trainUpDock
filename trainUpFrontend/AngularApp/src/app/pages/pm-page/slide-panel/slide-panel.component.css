@@ -1,0 +1,19 @@
+:host {
+    display: block;
+    overflow: hidden; 
+  }
+  .panes {
+    height: 200%;
+    width: 100%;      
+    display: block;    
+  }
+
+  .person-list {
+    height: 50%;
+    display: block;
+  }
+
+  .course-title {
+    height: 50%;
+    display: block;
+  }

@@ -1,18 +1,17 @@
 <div class="modal__overlay">
     <div class="modal">
         <div class="modal__content">
-            <h2 class="title">Statistics</h2>
-            <br>
-            <div class="chart-container">
-                <fusioncharts width="600" height="300" type="Column2d" [dataSource]="dataSource1" *ngIf="typeStatistic">
-                </fusioncharts>
-                <br>
-                <fusioncharts width="600" height="300" type="Column2d" [dataSource]="dataSource2" *ngIf="yearStatistic">
-                </fusioncharts>
+            <h2 class="title">Enroll participants</h2>
+            <div class="inputs__container">
+                <input type="text" class="input" placeholder="Please enter training name">
+                <input type="text" class="input" placeholder="Please enter number of participants">
+                <input type="text" class="input" placeholder="Please enter day of training">
+                <input type="text" class="input" placeholder="Please enter time interval">
             </div>
+            <input type="text" class="textarea" placeholder="Please enter participants">
             <div class="modal__buttons">
-                <!-- <button mat-button appPreventDoubleClick (throttledClick)="onNoClick()" [throttleTime]="1000">Cancel</button> -->
-                <button mat-stroked-button [mat-dialog-close]>Ok</button>
+              <button mat-button (click)="onNoClick()">Cancel</button>
+              <button mat-button [mat-dialog-close]>Enroll</button>
             </div>
         </div>
     </div>

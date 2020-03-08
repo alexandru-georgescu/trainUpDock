@@ -1,17 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~ngx-toastr/toastr.css';
-
-
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css"; */
 * {
     margin: 0px; 
     padding: 0px; 
 }
-
 body {
     background: white;
     width: 100%;
     height: 100vh;
 }
+
+
  
 /*for error div i */
 div.error-message i{
@@ -39,53 +38,3 @@ div.error-message i{
 .mat-sort-header-container {
     justify-content: center;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-:not(i) {
-    font-family: 'Aleo', serif;
-    font-size: 15px;
-    font-weight: 500;
-}
-
-.mat-error {
-    font-size: 11.9px !important;
-}
-
-h2 {
-    font-size: 18px !important;
-    font-weight: 800 !important;
-  }
-
-  .table-hover tr:hover:not(.table-accepted):not(.table-refused) {
-    background-color: #d7e8fd !important;
-}
-
-.mat-menu-item:hover:not([disabled]) {
-    background-color: #d7e8fd !important;
-}
-
-::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
-    color: black !important;
-  }
-  ::ng-deep .mat-form-field.mat-focused .mat-form-field-ripple {
-    background-color: #6699d3 !important;
-  }
-
-  ::ng-deep .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) .mat-select-arrow {
-    color: #6699d3 !important;
-  }
-
-  ::ng-deep .mat-form-field.mat-focused .mat-input-element {
-    color: black !important;
-  }
-

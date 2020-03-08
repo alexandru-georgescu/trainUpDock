@@ -7,14 +7,9 @@ export class User {
     firstName: string;
     lastName: string;
     password : string;
-    enable: boolean;
     courses: Course[];
     leader: string;
     wishToEnroll: Course[];
-    waitToEnroll: Course[];
-    rejectedList: Course[];
-
-
 
     constructor (email: string,
         type: string,
@@ -23,10 +18,7 @@ export class User {
         password : string,
         courses: Course[],
         leader: string,
-        wishToEnroll: Course[],
-        waitToEnroll: Course[],
-        rejectedList: Course[],
-        ) {
+        wishToEnroll: Course[]) {
             this.email = email;
             this.type = type;
             this.firstName = firstName;
@@ -35,8 +27,6 @@ export class User {
             this.courses = courses;
             this.leader = leader;
             this.wishToEnroll = wishToEnroll;
-            this.waitToEnroll = waitToEnroll;
-            this.rejectedList = rejectedList;
         }
 
 }

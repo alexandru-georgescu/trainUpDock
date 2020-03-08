@@ -3,68 +3,18 @@
         <div class="modal__content">
             <h2 class="title">Add Course</h2>
             <div class="inputs_container">
-                <form [formGroup]="courseForm">
-                    <div class="first__container">
-                        <mat-form-field>
-                            <input matInput placeholder="Course Name (max. 30 characters)" formControlName="name"
-                                maxLength="30">
-                            <mat-error *ngIf="submitted && controls.name.errors" class="invalid-feedback">Enter the
-                                course name</mat-error>
-                        </mat-form-field>
-                        <mat-form-field class="space-needed2">
-                            <input matInput placeholder="Capacity" formControlName="capacity" pattern="^[0-9]*$">
-                            <mat-error *ngIf="submitted && controls.capacity.errors?.required" class="invalid-feedback">
-                                Enter the capacity</mat-error>
-                            <mat-error *ngIf="controls.capacity.errors?.pattern" class="invalid-feedback">Enter a valid
-                                number</mat-error>
-                        </mat-form-field>
-                    </div>
-                    <div class="second_container">
-                        <mat-form-field>
-                            <mat-label>Choose a domain</mat-label>
-                            <mat-select [(value)]="selected" formControlName="domain">
-                                <mat-option value="RCA">RCA</mat-option>
-                                <mat-option value="NFR">NFR</mat-option>
-                                <mat-option value="PWCC">PWCC</mat-option>
-                                <mat-option value="GTB">GTB</mat-option>
-                            </mat-select>
-                            <mat-error *ngIf="controls.domain.required" class="invalid-feedback"></mat-error>
-                        </mat-form-field>
-                        <mat-form-field class="space-needed2">
-                            <input matInput placeholder="Time interval" formControlName="timeInterval"
-                                pattern="^(([0-1][0-9]|[2][0-3]):([0-5][0-9])-([0-1][0-9]|[2][0-3]):([0-5][0-9]))$">
-                            <mat-error *ngIf="submitted && controls.timeInterval.errors?.required"
-                                class="invalid-feedback">Enter
-                                time interval</mat-error>
-                            <mat-error *ngIf="controls.timeInterval.errors?.pattern" class="invalid-feedback">Format
-                                should be hh:mm-hh:mm and valid !</mat-error>
-                        </mat-form-field>
-                    </div>
-                    <div class="third_container">
-                        <mat-form-field>
-                            <input matInput [min]="minDate" [matDatepicker]="picker" placeholder="Choose Start Date"
-                                formControlName="startDate">
-                            <mat-error *ngIf="submitted && controls.startDate.errors" class="invalid-feedback">Choose a
-                                starting date</mat-error>
-                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                            <mat-datepicker #picker></mat-datepicker>
-                        </mat-form-field>
-                        <mat-form-field class="space-needed1">
-                            <input matInput [min]="controls.startDate.value" [matDatepicker]="picker2"
-                                placeholder="Choose End Date" formControlName="endDate" [errorStateMatcher]="matcher">
-                            <mat-error *ngIf="submitted && controls.endDate.errors" class="invalid-feedback">Choose an
-                                ending date</mat-error>
-                            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-                            <mat-datepicker #picker2></mat-datepicker>
-                        </mat-form-field>
-                    </div>
-                    <div class="modal__buttons">
-                        <button class="cancel-btn" mat-button appPreventDoubleClick (throttledClick)="onNoClick()"
-                            [throttleTime]="1000">Cancel</button>
-                        <button class="add-btn" mat-button appPreventDoubleClick (throttledClick)="onClick()"
-                            [throttleTime]="1000">Add</button>
-                    </div>
-                </form>
+                <div class="left__container">
+                    <input type="text" class="input" placeholder="Course Name">
+                    <input type="text" class="input1" placeholder="Capacity">
+                </div>
+                <div class="right_container">
+                    <input type="text" class="input" placeholder="Start Date">
+                    <input type="text" class="input1" placeholder="End Date">
+                </div>
+            </div>
+            <div class="modal__buttons">
+              <button class="cancel-btn" mat-button (click)="onNoClick()">Cancel</button>
+              <button class="add-btn" mat-button [mat-dialog-close]>Add</button>
             </div>
         </div>
     </div>

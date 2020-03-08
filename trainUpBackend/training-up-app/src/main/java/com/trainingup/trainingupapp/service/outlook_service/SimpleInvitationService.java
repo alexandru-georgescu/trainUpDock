@@ -24,7 +24,7 @@ public class SimpleInvitationService implements InvitationService {
     private String password = "trainUp112";
     private String host = "pop.gmail.com";
     private String prot = "pop3";
-    private String port = "993";
+    private String port = "995";
 
     @Autowired
     JavaMailSender javaMailSender;
