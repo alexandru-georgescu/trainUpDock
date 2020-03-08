@@ -1,0 +1,22 @@
+<div class="modal__overlay">
+    <div class="modal">
+        <div class="modal__content">
+            <h2 class="title">Statistics</h2>
+            <br>
+            <fusioncharts width="700" height="400" type="Column2d" [dataSource]="dataSource1" *ngIf="maxDomains">
+            </fusioncharts>
+            <table matSort class="table table-hover">
+                <thead class="thead-dark">
+                        <th>Courses with less than 50% enrollment: </th>
+                </thead>
+                <tbody>
+                    <td>{{ below50 }}</td>
+                </tbody>
+            </table>
+            <div class="modal__buttons">
+                <!-- <button mat-button appPreventDoubleClick (throttledClick)="onNoClick()" [throttleTime]="1000">Cancel</button> -->
+                <button mat-button [mat-dialog-close] appPreventDoubleClick [throttleTime]="1000">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>

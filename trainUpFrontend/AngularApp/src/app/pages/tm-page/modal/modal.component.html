@@ -1,0 +1,19 @@
+<div class="modal__overlay">
+    <div class="modal">
+        <div class="modal__content">
+            <h2 class="title">Statistics</h2>
+            <br>
+            <div class="chart-container">
+                <fusioncharts width="600" height="300" type="Column2d" [dataSource]="dataSource1" *ngIf="typeStatistic">
+                </fusioncharts>
+                <br>
+                <fusioncharts width="600" height="300" type="Column2d" [dataSource]="dataSource2" *ngIf="yearStatistic">
+                </fusioncharts>
+            </div>
+            <div class="modal__buttons">
+                <!-- <button mat-button appPreventDoubleClick (throttledClick)="onNoClick()" [throttleTime]="1000">Cancel</button> -->
+                <button mat-stroked-button [mat-dialog-close]>Ok</button>
+            </div>
+        </div>
+    </div>
+</div>

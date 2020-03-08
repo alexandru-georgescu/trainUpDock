@@ -1,0 +1,84 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+
+
+::ng-deep .mat-ink-bar {
+    background-color: #6699d3 !important;
+    height: 2.5px !important;
+}
+
+::ng-deep .mat-tab-body-wrapper {
+    width:80% !important;
+    margin: auto;
+}
+
+::ng-deep .mat-tab-label-content {
+    font-weight: 700;
+}
+
+::ng-deep .mat-tab-header {
+    border-bottom: none !important;
+}
+
+#ac {
+    text-align: center !important;
+  }
+
+.all-container {
+    text-align: center;
+    margin: 0 auto;
+}
+
+table {
+    display: inline;
+}
+
+/* LogOutButton */
+.userDetailsContainer {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 15px;
+    margin-top: 5px;
+}
+
+::ng-deep .cdk-overlay-connected-position-bounding-box {
+    right: 0px !important;
+    width: 100% !important;
+  }
+
+  .upperContainer {
+    /* background-color:#b8e8f7; */
+    background-color: #d7e8fd;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.logoContainer {
+    display: flex;
+    justify-content: flex-start;
+    color: black;
+    font-size: 24px;
+    margin-left: 15px;
+    margin-top: 10px;
+  }
+
+.mat-icon-button {
+    width:0%;
+}
+
+.mat-menu-item {
+    background-color: none !important;
+}
+
+button.mat-menu-item{
+    background-color: white;
+}
+
+button:focus {
+    outline:0;
+}
+
+td {
+    text-align: center;
+}

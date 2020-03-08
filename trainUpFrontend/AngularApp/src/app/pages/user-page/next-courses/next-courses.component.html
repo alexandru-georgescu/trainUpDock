@@ -1,0 +1,48 @@
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<table matSort (matSortChange)="sortData($event)" class="table table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th mat-sort-header="courseName">Course Name</th>
+            <th mat-sort-header="domain">Domain</th>
+            <th mat-sort-header="capacity">Capacity</th>
+            <th mat-sort-header="actualCapacity">Available</th>
+            <th mat-sort-header="startDate">Start Date</th>
+            <th mat-sort-header="endDate">End Date</th>
+            <th mat-sort-header="timeInterval">Time Interval</th>
+            <th mat-sort-header="projectManager">Project Manager</th>
+            <th>Wish to enroll</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let course of sortedData">
+            <td>{{ course.courseName }}</td>
+            <td>{{ course.domain }}</td>
+            <td>{{ course.capacity }}</td>
+            <td>{{ course.actualCapacity }}</td>
+            <td>{{ course.startDate }}</td>
+            <td>{{ course.endDate }}</td>
+            <td>{{ course.timeInterval }}</td>
+            <td>{{ course.projectManager }}</td>
+            <td>
+                <button appPreventDoubleClick (throttledClick)="rowClick(course)" [throttleTime]="1000"
+                    title="Enroll to this course">
+                    <i class="material-icons">add_circle</i>
+                </button>
+            </td>
+        </tr>
+        <tr *ngFor="let course of unavailableCourses">
+            <td>{{ course.courseName }}</td>
+            <td>{{ course.domain }}</td>
+            <td>{{ course.capacity }}</td>
+            <td>{{ course.actualCapacity }}</td>
+            <td>{{ course.startDate }}</td>
+            <td>{{ course.endDate }}</td>
+            <td>{{ course.timeInterval }}</td>
+            <td>{{ course.projectManager }}</td>
+            <td> You can't enroll to this course </td>
+        </tr>
+    </tbody>
+</table>

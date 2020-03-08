@@ -1,0 +1,23 @@
+
+.title {
+    font-size: 30px;
+}
+
+.modal__buttons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.mat-button {
+    background-color: gainsboro;
+}
+
+.chart-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+td {
+    text-align: center;
+}

@@ -1,0 +1,69 @@
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+  
+  <div class="upperContainer">
+    <div class="logoContainer">
+      trainUP
+    </div>
+    <!-- LogOut Button -->
+    <div class='userDetailsContainer'>
+      <div>
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="account">
+          <i class="material-icons">account_circle</i>
+          <span> {{user.firstName}} {{ user.lastName }}</span>
+        </button>
+        <mat-menu #menu="matMenu" [overlapTrigger]="false" xPosition="before" yPosition="below">
+            <div>
+            <button id="ac" mat-menu-item appPreventDoubleClick (throttledClick)="onStatistic()" [throttleTime]="1000">Statistics</button>
+          </div>
+          <div>
+            <button id="ac" mat-menu-item appPreventDoubleClick (throttledClick)="logout()" [throttleTime]="1000">Log out</button>
+          </div>
+        </mat-menu>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="all-container">
+    <table matSort (matSortChange)="sortData($event)" class="table table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th mat-sort-header="firstName">First Name</th>
+          <th mat-sort-header="lastName">Last Name</th>
+          <th mat-sort-header="email">E-mail</th>
+          <th mat-sort-header="ongoing_courses">Attended courses</th>
+          <th mat-sort-header="rejected_courses">Rejected courses</th>
+          <th mat-sort-header="course">Wish to enroll course</th>
+          <th>Start date</th>
+          <th>End date</th>
+          <th>Course type</th>
+          <th>Course domain</th>
+          <th>Enroll</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let user of sortedData">
+          <tr *ngFor="let course of user.wishToEnroll">
+            <td>{{ user.firstName }}</td>
+            <td>{{ user.lastName }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.courses.length }}</td>
+            <td>{{ user.rejectedList.length }}</td>
+            <td>{{ course.courseName }}</td>
+            <td>{{ course.startDate }}</td>
+            <td>{{ course.endDate }}</td>
+            <td>{{ course.type }}</td>
+            <td>{{ course.domain }}</td>
+            <td>
+              <button type="button" class="btn btn-success" id="xbtn" appPreventDoubleClick
+                (throttledClick)="yesClick(user, course)" [throttleTime]="1000" title="Accept user">&#10004;</button>
+              <button type="button" class="btn btn-danger" id="xbtn" appPreventDoubleClick (throttledClick)="noClick(user, course)"
+                [throttleTime]="1000" title="Decline user">&times;</button>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>

@@ -1,0 +1,115 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+
+.all-container {
+    text-align: center;
+    margin: 0 auto;
+}
+
+table {
+    display: inline;
+}
+
+.upperContainer {
+  /* background-color:#b8e8f7; */
+  background-color: #d7e8fd;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+#ac {
+  text-align: center !important;
+}
+
+.logoContainer {
+  display: flex;
+  justify-content: flex-start;
+  color: black;
+  font-size: 24px;
+  margin-left: 15px;
+  margin-top: 10px;
+}
+
+/* LogOutButton */
+.userDetailsContainer {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 15px;
+}
+
+::ng-deep .cdk-overlay-connected-position-bounding-box {
+    /* position: relative !important; */
+    right: 0px !important;
+    width: 100% !important;
+  }
+
+.mat-icon-button {
+    width:0%;
+}
+
+.mat-menu-item {
+    background-color: none !important;
+}
+
+button.mat-menu-item{
+    background-color: white;
+}
+
+button:focus {
+    outline:0;
+}
+
+td {
+    vertical-align: middle !important;
+    text-align: center;
+    padding:0% !important;
+}
+
+.delete_button {
+    text-decoration: none !important;
+    background: none !important;
+    outline : 0 !important;
+    border: none !important;
+}
+  
+  .mat-stroked-button.mat-primary {
+    color: black !important;
+    font-size: 15px;
+  }
+  
+  .mat-stroked-button:not([disabled]) {
+    border-color: rgba(0,0,0,.5) !important;
+  }
+
+  mat-form-field {
+    width: 90%;
+  }
+
+button:active {
+  transform: translateY(2px)!important;
+}
+
+.edit-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+    color: black !important;
+  }
+  ::ng-deep .mat-form-field.mat-focused .mat-form-field-ripple {
+    background-color: #6699d3 !important;
+  }
+
+  ::ng-deep .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) .mat-select-arrow {
+      color: #6699d3 !important;
+  }
+
+  ::ng-deep .mat-form-field.mat-focused .mat-input-element {
+    color: black !important;
+  }
+
+  ::ng-deep .mat-tab-header {
+    border-bottom: none !important;
+}

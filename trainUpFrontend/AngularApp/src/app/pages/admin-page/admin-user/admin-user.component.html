@@ -1,0 +1,58 @@
+<div class="all-container">
+    <table matSort (matSortChange)="sortDataUser($event)" class="table table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th mat-sort-header="id">id</th>
+                <th mat-sort-header="email">E-mail</th>
+                <th mat-sort-header="type">Type</th>
+                <th mat-sort-header="firstName">First Name</th>
+                <th mat-sort-header="lastName">Last Name</th>
+                <th mat-sort-header="enable">Enable</th>
+                <th mat-sort-header="leader">Leader</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of sortedDataUser;  let i = index">
+                <td>{{ user.id }}</td>
+                <td>{{ user.email }}</td>
+                <td>
+                    <mat-form-field>
+                        <mat-select [(value)]="selectedUserType[i]"
+                            (selectionChange)="changeType(i, selectedUserType[i])">
+                            <mat-option *ngFor="let type of types" [(value)]="type">{{type}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+                <td>{{ user.firstName }}</td>
+                <td>{{ user.lastName }}</td>
+                <td>
+                    <mat-form-field>
+                        <mat-select [(value)]="selectedUserEnable[i]"
+                            (selectionChange)="changeEnable(i, selectedUserEnable[i])">
+                            <mat-option *ngFor="let enable of enables" [(value)]=" enable">{{enable}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field>
+                        <mat-select [(value)]="selectedUserLeader[i]"
+                            (selectionChange)="changeLeader(i, selectedUserLeader[i])">
+                            <mat-option *ngFor="let leader of leaders" [(value)]="leader">{{leader}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="edit-buttons">
+    <button mat-stroked-button appPreventDoubleClick (throttledClick)="resetChangesUser()" [throttleTime]="1000">
+        <i class="material-icons"> undo </i>
+        Reset changes
+    </button>
+    <button mat-stroked-button appPreventDoubleClick (throttledClick)="saveChangesUser()" [throttleTime]="1000">
+        <i class="material-icons">save</i>
+        Save changes
+    </button>
+</div>

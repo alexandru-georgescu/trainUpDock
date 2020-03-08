@@ -1,0 +1,33 @@
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<div class="upperContainer">
+    <div class="logoContainer">
+        trainUP
+    </div>
+    <div class='userDetailsContainer'>
+        <div>
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="account">
+                <i class="material-icons">account_circle</i>
+                <span>{{user.firstName}} {{ user.lastName }}</span>
+            </button>
+            <mat-menu #menu="matMenu" [overlapTrigger]="false" xPosition="before" yPosition="below">
+                <div>
+                    <button id="ac" mat-menu-item appPreventDoubleClick (throttledClick)="logout()" [throttleTime]="1000">Log out</button>
+                </div>
+            </mat-menu>
+        </div>
+    </div>
+</div>
+
+<router-outlet></router-outlet>
+
+<mat-tab-group mat-align-tabs="center" [selectedIndex]="1">
+    <mat-tab label="Edit Users">
+        <app-admin-user></app-admin-user>
+    </mat-tab>
+    <mat-tab label="Edit Courses">
+        <app-admin-course></app-admin-course>
+    </mat-tab>
+</mat-tab-group>

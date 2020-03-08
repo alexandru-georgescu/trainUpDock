@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All users</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+
+<div style="width:50%;text-align:center;margin: 0 auto;">
+    <h1>TrainUp APP</h1>
+    <table th:object="${users}" id="userTable" class="table table-striped">
+        <thead class="thead-dark">
+        <tr>
+            <th>ID</th>
+            <th>FIRST NAME</th>
+            <th>LAST NAME</th>
+            <th>EMAIL</th>
+            <th>WISH</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="user :${users}">
+            <td  th:text="${user.id}"></td>
+            <td  th:text="${user.firstName}"></td>
+            <td  th:text="${user.lastName}"></td>
+            <td  th:text="${user.email}"></td>
+            <tr th:each="course :${user}.courses">
+                <td th:text="${course.courseName}"></td>
+            </tr>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

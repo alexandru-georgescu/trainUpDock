@@ -1,0 +1,30 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+mat-icon {
+    vertical-align: bottom !important;
+    font-family: 'Material Icons' !important;
+}
+
+button, .mat-sort-header-button {
+    text-decoration: none !important;
+    background: none !important;
+    outline : 0 !important;
+    border: none !important;
+}
+
+button:active {
+  transform: translateY(2px)!important;
+}
+
+td {
+    text-align: center;
+}
+
+th {
+    text-align: center;
+}
+
+
+
+
+  

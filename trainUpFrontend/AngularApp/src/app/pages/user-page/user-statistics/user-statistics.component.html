@@ -1,0 +1,23 @@
+<div class="modal__overlay">
+    <div class="modal">
+        <div class="modal__content">
+            <h2 class="title">Statistics</h2>
+            <br>
+            <fusioncharts width="700" height="400" type="Column2d" [dataSource]="dataSource" *ngIf="courseStatistic">
+            </fusioncharts>
+            <table matSort class="table table-hover">
+                <thead class="thead-dark">
+                    <th>Completed from current courses: </th>
+                    <th>Remaining of upcoming courses: </th>
+                </thead>
+                <tbody>
+                    <td>{{ attendedDays }}</td>
+                    <td>{{ upcomingDays }}</td>
+                </tbody>
+            </table>
+            <div class="modal__buttons">
+                <button mat-stroked-button [mat-dialog-close]>Ok</button>
+            </div>
+        </div>
+    </div>
+</div>

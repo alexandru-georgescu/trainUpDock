@@ -1,0 +1,40 @@
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<div class="upperContainer">
+  <div class="logoContainer">
+    trainUP
+  </div>
+  <!-- LogOut Button -->
+  <div class='userDetailsContainer'>
+    <div>
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="account">
+        <i class="material-icons">account_circle</i>
+        <span> {{user.firstName}} {{ user.lastName }}</span>
+      </button>
+      <mat-menu #menu="matMenu" [overlapTrigger]="false" xPosition="before" yPosition="below">
+        <div>
+          <button id="ac" mat-menu-item appPreventDoubleClick (throttledClick)="onStatistic()" [throttleTime]="1000">Statistics</button>
+        </div>
+        <div>
+          <button id="ac" mat-menu-item appPreventDoubleClick (throttledClick)="logout()" [throttleTime]="1000">Log out</button>
+        </div>
+      </mat-menu>
+    </div>
+  </div>
+</div>
+
+<mat-tab-group mat-align-tabs="center" [selectedIndex]="1">
+  <mat-tab label="Attended courses">
+    <app-previous-courses></app-previous-courses>
+
+  </mat-tab>
+  <mat-tab label="Ongoing courses">
+    <app-current-courses></app-current-courses>
+
+  </mat-tab>
+  <mat-tab label="Available courses">
+    <app-next-courses></app-next-courses>
+  </mat-tab>
+</mat-tab-group>

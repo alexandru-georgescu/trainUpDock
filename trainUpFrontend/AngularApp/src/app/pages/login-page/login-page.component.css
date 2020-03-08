@@ -1,0 +1,93 @@
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+  color: black;
+}
+::ng-deep .mat-form-field.mat-focused .mat-form-field-ripple {
+  background-color: #6699d3;
+}
+::ng-deep .mat-form-field.mat-focused .mat-input-element {
+  color: black;
+}
+
+.title-border {
+  margin-bottom: 10px;
+}
+.login-logo-container {
+  background-color: #d7e8fd;
+  margin-bottom: 50px;
+}
+.fx-grayscale-logo {
+  width: 350px;
+  height: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+.icon {
+  font-size: 24px;
+  color: black;
+  margin-right: 15px;
+  line-height: 31px;
+}
+.col {
+  padding: 0;
+}
+.invalid-feedback {
+  color: red;
+  position: absolute;
+  margin-left: 5px;
+}
+.login-button {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-bottom: 1.25em;
+}
+
+.mat-stroked-button.mat-primary {
+  color: black !important;
+  font-size: 15px;
+}
+
+.mat-stroked-button:not([disabled]) {
+  border-color: rgba(0,0,0,.5) !important;
+}
+
+.text-container {
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form-group, .title-border {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrong-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: red;
+}
+
+.btn {
+  background-color: transparent !important;
+  text-transform: none;
+  text-decoration: none;
+  color: black;
+  box-shadow: none;
+  padding: 0cm;
+  font-weight: bold;
+  margin-left: 10px;
+}
+.btn:hover {
+  box-shadow: none;
+}
+
+
+h2 {
+  font-size: 18px !important;
+  font-weight: 800 !important;
+}

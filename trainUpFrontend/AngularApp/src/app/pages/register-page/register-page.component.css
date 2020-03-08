@@ -1,0 +1,157 @@
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+    color: black;
+  }
+  ::ng-deep .mat-form-field.mat-focused .mat-form-field-ripple {
+    background-color: #6699d3;
+  }
+  ::ng-deep .mat-form-field.mat-focused .mat-input-element {
+    color: black;
+  }
+  
+
+.title-border {
+    margin-bottom: 10px;
+}
+
+.login-logo-container {
+    background-color: #d7e8fd;
+    margin-bottom: 50px;
+}
+
+.fx-grayscale-logo {
+    width: 350px;
+    height: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.icon {
+    font-size: 24px;
+    color: black;
+    margin-right: 15px;
+    line-height: 31px;
+}
+
+.col {
+    padding: 0;
+}
+
+.invalid-feedback {
+    /* font-weight: bold; */
+    color: red;
+    position: absolute;
+    margin-left: 5px;
+    margin-top: 10px;
+}
+
+.btn-link {
+    padding: 0;
+}
+
+.register-button {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-bottom: 1.25em;
+  }
+  
+  .mat-stroked-button.mat-primary {
+    color: black !important;
+    font-size: 15px;
+  }
+  
+  .mat-stroked-button:not([disabled]) {
+    border-color: rgba(0,0,0,.5) !important;
+  }
+
+.text-container {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 1.25em;
+}
+
+.form-group, .title-border {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrong-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: red;
+    margin-top: 10px;
+}
+
+.btn {
+    background-color:transparent !important;
+    text-transform: none;
+    text-decoration: none;
+    color: black;
+    box-shadow: none;
+    padding: 0cm;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.btn:hover {
+    box-shadow: none;
+}
+
+/* 1 */
+/* 
+.mat-form-field-invalid {
+    margin-bottom: 20%;
+} */
+
+/* 2 */
+/* mat-form-field .mat-form-field-underline {
+    position: static !important;
+}
+mat-form-field .mat-form-field-subscript-wrapper {
+    position: static !important;
+} */
+
+/* 3 */
+mat-form-field.ng-invalid.ng-touched {
+    animation: example;
+    animation-duration: 0.3s;
+    margin-bottom: 13px;
+  }
+  
+  @keyframes example {
+    from {margin-bottom: 0;}
+    to {margin-bottom: 13px;}
+  }
+
+
+  mat-form-field {
+    width: 80%;
+  }
+
+  div.col {
+      width: 25%;
+  }
+
+
+input:not([type]),
+input[type=text]:not(.browser-default),
+input[type=password]:not(.browser-default), 
+input[type=email]:not(.browser-default), 
+input[type=url]:not(.browser-default), 
+input[type=time]:not(.browser-default), 
+input[type=date]:not(.browser-default), 
+input[type=datetime]:not(.browser-default), 
+input[type=datetime-local]:not(.browser-default), 
+input[type=tel]:not(.browser-default), 
+input[type=number]:not(.browser-default), 
+input[type=search]:not(.browser-default), 
+textarea.materialize-textarea {
+    width: 100%;
+}
